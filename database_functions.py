@@ -121,7 +121,6 @@ def return_book(serial_number):
         today = datetime.date.today()
         cur.execute("update circulations set return_date=? where serial_number=?", (today, serial_number))
         con.commit()
-        print("Book returned successfully")
 
     except sq.IntegrityError:
         print("Error: Book with the same serial number is not issued or does not exist")
